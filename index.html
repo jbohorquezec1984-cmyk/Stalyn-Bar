@@ -129,6 +129,8 @@ h2 {
 
     align-items: center;
 
+    gap: 12px;
+
     box-shadow: 0 4px 12px rgba(0,0,0,.08);
 }
 
@@ -143,6 +145,10 @@ h2 {
     line-height: 1.4;
 }
 
+.product-info {
+    flex: 1;
+}
+
 .price {
     color: #0796a0;
 
@@ -155,12 +161,96 @@ h2 {
 
 
 /* ========================= */
-/* BOTÓN VOLVER AL MENÚ */
+/* BOTÓN AGREGAR */
 /* ========================= */
+
+.add-button {
+    background: #0796a0;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 10px 13px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition: .2s;
+}
+
+.add-button:active {
+    transform: scale(.94);
+}
+
+.add-button.added {
+    background: #25a244;
+}
+
+
+/* ========================= */
+/* CONTROLES DE CANTIDAD */
+/* ========================= */
+
+.quantity-control {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 9px;
+}
+
+.quantity-control button {
+    width: 32px;
+
+    height: 32px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #063b5c;
+
+    color: white;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.quantity-control span {
+    min-width: 24px;
+
+    text-align: center;
+
+    font-weight: bold;
+
+    color: #063b5c;
+}
+
+
+/* ========================= */
+/* BOTÓN VOLVER */
+/* ========================= */
+
 .back {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 10px;
 
     width: 100%;
@@ -196,11 +286,88 @@ h2 {
 
 .back:active {
     transform: scale(.97);
-
-    box-shadow: 0 3px 8px rgba(183,28,28,.25);
 }
+
+
 /* ========================= */
-/* WHATSAPP */
+/* CARRITO */
+/* ========================= */
+
+.cart-box {
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 20px;
+
+    margin-top: 25px;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,.12);
+}
+
+.cart-box h2 {
+    margin-top: 0;
+
+    margin-bottom: 15px;
+}
+
+.cart-empty {
+    text-align: center;
+
+    color: #777;
+
+    padding: 15px 5px;
+}
+
+.cart-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item-name {
+    flex: 1;
+
+    color: #063b5c;
+
+    font-weight: bold;
+}
+
+.cart-item-price {
+    font-weight: bold;
+
+    color: #0796a0;
+
+    white-space: nowrap;
+}
+
+.cart-total {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-top: 16px;
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+    color: #063b5c;
+}
+
+
+/* ========================= */
+/* BOTÓN WHATSAPP */
 /* ========================= */
 
 .whatsapp {
@@ -218,11 +385,50 @@ h2 {
 
     border-radius: 16px;
 
-    margin: 28px 0;
+    margin: 20px 0 10px;
 
     font-size: 18px;
 
     font-weight: bold;
+
+    border: none;
+
+    width: 100%;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 12px rgba(37,211,102,.25);
+}
+
+.whatsapp:active {
+    transform: scale(.98);
+}
+
+
+/* ========================= */
+/* VACIAR PEDIDO */
+/* ========================= */
+
+.clear-cart {
+    display: block;
+
+    width: 100%;
+
+    border: none;
+
+    background: #eee;
+
+    color: #b71c1c;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    margin-top: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
 }
 
 
@@ -259,6 +465,23 @@ footer p {
         font-size: 34px;
     }
 
+    .product {
+        padding: 15px;
+    }
+
+    .product h3 {
+        font-size: 16px;
+    }
+
+    .price {
+        font-size: 18px;
+    }
+
+    .add-button {
+        padding: 9px 10px;
+        font-size: 13px;
+    }
+
 }
 
 </style></head><body><header><div class="logo">
@@ -271,270 +494,662 @@ footer p {
     🍦 Helados · 🍹 Cócteles · 🍔 Comida · 🥩 Asados
 </p>
 
-</header><div class="container"><!-- ======================= --><!-- CATEGORÍAS --><!-- ======================= --><div id="categorias"><h2>🌴 Nuestro menú</h2><div class="categories"><div class="category" onclick="mostrar('asados')"><div class="emoji">🥩</div>
-
-<h3>Asados</h3>
-
-</div><div class="category" onclick="mostrar('piqueos')"><div class="emoji">🍤</div>
-
-<h3>Piqueos</h3>
-
-</div><div class="category" onclick="mostrar('comida')"><div class="emoji">🍔</div>
-
-<h3>Comida rápida</h3>
-
-</div><div class="category" onclick="mostrar('cocteles')"><div class="emoji">🍹</div>
-
-<h3>Cócteles</h3>
-
-</div><div class="category" onclick="mostrar('helados')"><div class="emoji">🍦</div>
-
-<h3>Helados</h3>
-
-</div><div class="category" onclick="mostrar('copas')"><div class="emoji">🍨</div>
-
-<h3>Copas</h3>
-
-</div><div class="category" onclick="mostrar('milkshakes')"><div class="emoji">🥤</div>
-
-<h3>Milkshakes</h3>
-
-</div><div class="category" onclick="mostrar('batidos')"><div class="emoji">🥭</div>
-
-<h3>Batidos</h3>
-
+</header><div class="container"><!-- ======================= --><!-- CATEGORÍAS --><!-- ======================= --><div id="categorias"><h2>🌴 Nuestro menú</h2><div class="categories"><div class="category" onclick="mostrar('asados')">
+    <div class="emoji">🥩</div>
+    <h3>Asados</h3>
+</div><div class="category" onclick="mostrar('piqueos')">
+    <div class="emoji">🍤</div>
+    <h3>Piqueos</h3>
+</div><div class="category" onclick="mostrar('comida')">
+    <div class="emoji">🍔</div>
+    <h3>Comida rápida</h3>
+</div><div class="category" onclick="mostrar('cocteles')">
+    <div class="emoji">🍹</div>
+    <h3>Cócteles</h3>
+</div><div class="category" onclick="mostrar('helados')">
+    <div class="emoji">🍦</div>
+    <h3>Helados</h3>
+</div><div class="category" onclick="mostrar('copas')">
+    <div class="emoji">🍨</div>
+    <h3>Copas</h3>
+</div><div class="category" onclick="mostrar('milkshakes')">
+    <div class="emoji">🥤</div>
+    <h3>Milkshakes</h3>
+</div><div class="category" onclick="mostrar('batidos')">
+    <div class="emoji">🥭</div>
+    <h3>Batidos</h3>
 </div></div></div><!-- ======================= --><!-- ASADOS --><!-- ======================= --><div id="asados" class="menu-section"><button class="back" onclick="volver()">
 🏠 <span>Volver al menú</span>
 </button><h2>🥩 Asados</h2><div class="product">
-<div>
+<div class="product-info">
 <h3>Pollo asado</h3>
 <p>Acompañado</p>
 </div>
-<div class="price">$3,50</div>
-</div><div class="product">
 <div>
+<div class="price">$3,50</div>
+<button class="add-button" onclick="agregar('Pollo asado', 3.50, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Carne asada</h3>
 <p>Acompañada</p>
 </div>
-<div class="price">$4,00</div>
-</div><div class="product">
 <div>
+<div class="price">$4,00</div>
+<button class="add-button" onclick="agregar('Carne asada', 4.00, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Chuleta asada</h3>
 <p>Acompañada</p>
 </div>
-<div class="price">$4,00</div>
-</div><div class="product">
 <div>
+<div class="price">$4,00</div>
+<button class="add-button" onclick="agregar('Chuleta asada', 4.00, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Costillas</h3>
 <p>Acompañadas</p>
 </div>
-<div class="price">$7,00</div>
-</div><div class="product">
 <div>
+<div class="price">$7,00</div>
+<button class="add-button" onclick="agregar('Costillas', 7.00, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Mini parrillada</h3>
 <p>Parrillada individual</p>
 </div>
-<div class="price">$8,00</div>
-</div><div class="product">
 <div>
+<div class="price">$8,00</div>
+<button class="add-button" onclick="agregar('Mini parrillada', 8.00, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Parrillada completa</h3>
 <p>Parrillada para compartir</p>
 </div>
+<div>
 <div class="price">$15,00</div>
+<button class="add-button" onclick="agregar('Parrillada completa', 15.00, this)">
+Agregar
+</button>
+</div>
 </div></div><!-- ======================= --><!-- PIQUEOS --><!-- ======================= --><div id="piqueos" class="menu-section"><button class="back" onclick="volver()">
 🏠 <span>Volver al menú</span>
 </button><h2>🍤 Piqueos</h2><div class="product">
-<div>
+<div class="product-info">
 <h3>Alitas a la BBQ</h3>
 <p>5 alitas</p>
 </div>
-<div class="price">$5,00</div>
-</div><div class="product">
 <div>
+<div class="price">$5,00</div>
+<button class="add-button" onclick="agregar('Alitas a la BBQ', 5.00, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Alitas a la parmesano</h3>
 <p>5 alitas</p>
 </div>
-<div class="price">$5,00</div>
-</div><div class="product">
 <div>
+<div class="price">$5,00</div>
+<button class="add-button" onclick="agregar('Alitas a la parmesano', 5.00, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Alitas a la maracuyá</h3>
 <p>5 alitas</p>
 </div>
-<div class="price">$5,00</div>
-</div><div class="product">
 <div>
+<div class="price">$5,00</div>
+<button class="add-button" onclick="agregar('Alitas a la maracuyá', 5.00, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Picadita mixta</h3>
 <p>Carne, pollo y chuleta</p>
 </div>
-<div class="price">$10,00</div>
-</div><div class="product">
 <div>
+<div class="price">$10,00</div>
+<button class="add-button" onclick="agregar('Picadita mixta', 10.00, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Picadita de marisco</h3>
 <p>Pescado, camarón y calamar</p>
 </div>
-<div class="price">$10,00</div>
-</div><div class="product">
 <div>
+<div class="price">$10,00</div>
+<button class="add-button" onclick="agregar('Picadita de marisco', 10.00, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Picadita mar y tierra</h3>
 <p>Picadita mixta + picadita de marisco</p>
 </div>
-<div class="price">$15,00</div>
-</div><div class="product">
 <div>
+<div class="price">$15,00</div>
+<button class="add-button" onclick="agregar('Picadita mar y tierra', 15.00, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Deditos de pescado</h3>
 <p>Piqueo de pescado</p>
 </div>
-<div class="price">$8,00</div>
-</div><div class="product">
 <div>
+<div class="price">$8,00</div>
+<button class="add-button" onclick="agregar('Deditos de pescado', 8.00, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Chicharrón de pescado</h3>
 <p>Piqueo de pescado</p>
 </div>
-<div class="price">$8,00</div>
-</div><div class="product">
 <div>
+<div class="price">$8,00</div>
+<button class="add-button" onclick="agregar('Chicharrón de pescado', 8.00, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Camarones apanados</h3>
 <p>Piqueo de camarón</p>
 </div>
+<div>
 <div class="price">$8,00</div>
+<button class="add-button" onclick="agregar('Camarones apanados', 8.00, this)">
+Agregar
+</button>
+</div>
 </div></div><!-- ======================= --><!-- COMIDA RÁPIDA --><!-- ======================= --><div id="comida" class="menu-section"><button class="back" onclick="volver()">
 🏠 <span>Volver al menú</span>
 </button><h2>🍔 Comida rápida</h2><div class="product">
-<div>
+<div class="product-info">
 <h3>Salchipapa</h3>
 <p>Papas + salchicha</p>
 </div>
-<div class="price">$1,25</div>
-</div><div class="product">
 <div>
+<div class="price">$1,25</div>
+<button class="add-button" onclick="agregar('Salchipapa', 1.25, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Papi pollo</h3>
 <p>Papas + pollo</p>
 </div>
-<div class="price">$2,50</div>
-</div><div class="product">
 <div>
+<div class="price">$2,50</div>
+<button class="add-button" onclick="agregar('Papi pollo', 2.50, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Tostada</h3>
 <p>Tostada preparada</p>
 </div>
-<div class="price">$1,25</div>
-</div><h2>🍔 Hamburguesas</h2><div class="product">
 <div>
+<div class="price">$1,25</div>
+<button class="add-button" onclick="agregar('Tostada', 1.25, this)">
+Agregar
+</button>
+</div>
+</div><h2>🍔 Hamburguesas</h2><div class="product">
+<div class="product-info">
 <h3>Hamburguesa sencilla</h3>
 <p>Hamburguesa sencilla</p>
 </div>
-<div class="price">$1,50</div>
-</div><div class="product">
 <div>
+<div class="price">$1,50</div>
+<button class="add-button" onclick="agregar('Hamburguesa sencilla', 1.50, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Hamburguesa completa</h3>
 <p>Hamburguesa completa</p>
 </div>
-<div class="price">$2,50</div>
-</div><div class="product">
 <div>
+<div class="price">$2,50</div>
+<button class="add-button" onclick="agregar('Hamburguesa completa', 2.50, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Hamburguesa suprema</h3>
 <p>Hamburguesa especial</p>
 </div>
+<div>
 <div class="price">$7,00</div>
+<button class="add-button" onclick="agregar('Hamburguesa suprema', 7.00, this)">
+Agregar
+</button>
+</div>
 </div></div><!-- ======================= --><!-- CÓCTELES --><!-- ======================= --><div id="cocteles" class="menu-section"><button class="back" onclick="volver()">
 🏠 <span>Volver al menú</span>
-</button><h2>🍹 Cócteles</h2><div class="product">
-<div>
+</button><h2>🍹 Cócteles</h2><div class="product"><div class="product-info">
 <h3>Próximamente</h3>
 <p>Estamos preparando nuestra selección de cócteles.</p>
-</div><div class="price">
-Próximamente
 </div></div></div><!-- ======================= --><!-- HELADOS --><!-- ======================= --><div id="helados" class="menu-section"><button class="back" onclick="volver()">
 🏠 <span>Volver al menú</span>
-</button><h2>🍦 Helados</h2><div class="product"><div>
+</button><h2>🍦 Helados</h2><div class="product"><div class="product-info">
 <h3>Helados cremosos</h3><p>
 Chicle · Napolitano · Chocolate ·
 Ron pasas · Vainilla · Frutilla
-</p></div><div class="price">
-$1,00
-</div></div><div class="product"><div>
+</p>
+</div><div>
+<div class="price">$1,00</div><button class="add-button"
+onclick="agregar('Helado cremoso', 1.00, this)">
+Agregar
+</button>
+
+</div></div><div class="product"><div class="product-info">
 <h3>Helados especiales</h3><p>
 Oreo · Marmoleado de mora ·
 Marmoleado de cereza · Manicho ·
 Snickers · Chocolate gourmet
-</p></div><div class="price">
-$1,25
+</p>
+</div><div>
+<div class="price">$1,25</div><button class="add-button"
+onclick="agregar('Helado especial', 1.25, this)">
+Agregar
+</button>
+
 </div></div></div><!-- ======================= --><!-- COPAS --><!-- ======================= --><div id="copas" class="menu-section"><button class="back" onclick="volver()">
 🏠 <span>Volver al menú</span>
 </button><h2>🍨 Copas</h2><div class="product">
-<div>
+<div class="product-info">
 <h3>Copa Oreo</h3>
 <p>Copa de helado</p>
 </div>
-<div class="price">$2,75</div>
-</div><div class="product">
 <div>
+<div class="price">$2,75</div>
+<button class="add-button" onclick="agregar('Copa Oreo', 2.75, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Copa de cereza</h3>
 <p>Copa de helado</p>
 </div>
-<div class="price">$2,75</div>
-</div><div class="product">
 <div>
+<div class="price">$2,75</div>
+<button class="add-button" onclick="agregar('Copa de cereza', 2.75, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Copa caramelo</h3>
 <p>Copa de helado</p>
 </div>
-<div class="price">$2,75</div>
-</div><div class="product">
 <div>
+<div class="price">$2,75</div>
+<button class="add-button" onclick="agregar('Copa caramelo', 2.75, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Copa chocolate</h3>
 <p>Copa de helado</p>
 </div>
-<div class="price">$2,75</div>
-</div><h2>🍨 Copas especiales</h2><div class="product">
 <div>
+<div class="price">$2,75</div>
+<button class="add-button" onclick="agregar('Copa chocolate', 2.75, this)">
+Agregar
+</button>
+</div>
+</div><h2>🍨 Copas especiales</h2><div class="product">
+<div class="product-info">
 <h3>Triple Boom</h3>
 <p>Copa especial</p>
 </div>
-<div class="price">$3,50</div>
-</div><div class="product">
 <div>
+<div class="price">$3,50</div>
+<button class="add-button" onclick="agregar('Triple Boom', 3.50, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Dulce Tentación</h3>
 <p>Copa especial</p>
 </div>
-<div class="price">$3,50</div>
-</div><div class="product">
 <div>
+<div class="price">$3,50</div>
+<button class="add-button" onclick="agregar('Dulce Tentación', 3.50, this)">
+Agregar
+</button>
+</div>
+</div><div class="product">
+<div class="product-info">
 <h3>Triple Crush</h3>
 <p>Copa especial</p>
 </div>
+<div>
 <div class="price">$3,50</div>
+<button class="add-button" onclick="agregar('Triple Crush', 3.50, this)">
+Agregar
+</button>
+</div>
 </div></div><!-- ======================= --><!-- MILKSHAKES --><!-- ======================= --><div id="milkshakes" class="menu-section"><button class="back" onclick="volver()">
 🏠 <span>Volver al menú</span>
-</button><h2>🥤 Milkshakes</h2><div class="product"><div>
-<h3>Milkshakes</h3><p>
+</button><h2>🥤 Milkshakes</h2><div class="product"><div class="product-info"><h3>Milkshake</h3><p>
 Chicle · Chocolate · Ron pasas ·
 Vainilla · Frutilla · Oreo · Mora ·
 Cereza · Manicho · Snickers
-</p></div><div class="price">
-$3,00
+</p></div><div>
+<div class="price">$3,00</div><button class="add-button"
+onclick="agregar('Milkshake', 3.00, this)">
+Agregar
+</button>
+
 </div></div></div><!-- ======================= --><!-- BATIDOS --><!-- ======================= --><div id="batidos" class="menu-section"><button class="back" onclick="volver()">
 🏠 <span>Volver al menú</span>
-</button><h2>🥭 Batidos</h2><div class="product"><div>
-<h3>Batidos</h3><p>
+</button><h2>🥭 Batidos</h2><div class="product"><div class="product-info"><h3>Batidos</h3><p>
 Mora · Frutilla · Melón · Papaya
-</p></div><div class="price">
-$1,50
-</div></div><div class="product"><div>
-<h3>Batido de durazno</h3><p>
+</p></div><div>
+<div class="price">$1,50</div><button class="add-button"
+onclick="agregar('Batido', 1.50, this)">
+Agregar
+</button>
+
+</div></div><div class="product"><div class="product-info"><h3>Batido de durazno</h3><p>
 Durazno
-</p></div><div class="price">
-$1,75
-</div></div></div><!-- ======================= --><!-- WHATSAPP --><!-- ======================= --><a
-class="whatsapp"
-href="https://wa.me/593XXXXXXXXX?text=Hola%20Stalyn%20Bar,%20quiero%20hacer%20un%20pedido"
-target="_blank">
+</p></div><div>
+<div class="price">$1,75</div><button class="add-button"
+onclick="agregar('Batido de durazno', 1.75, this)">
+Agregar
+</button>
 
-📲 PEDIR POR WHATSAPP
+</div></div></div><!-- ======================= --><!-- PEDIDO --><!-- ======================= --><div id="pedido" class="cart-box"><h2>🛒 Mi pedido</h2><div id="listaPedido"><div class="cart-empty">
+Tu pedido está vacío.
+</div></div><div class="cart-total"><span>Total:</span>
 
-</a></div><!-- ======================= --><!-- FOOTER --><!-- ======================= --><footer><h3>STALYN BAR</h3><p>📍 General Villamil Playas</p><p>🍦 ¡Te esperamos!</p></footer><script>
+<span id="totalPedido">$0,00</span>
+
+</div><button class="whatsapp" onclick="enviarWhatsApp()">📲 REALIZAR PEDIDO POR WHATSAPP
+
+</button><button class="clear-cart" onclick="vaciarPedido()">🗑️ Vaciar pedido
+
+</button></div></div><!-- ======================= --><!-- FOOTER --><!-- ======================= --><footer><h3>STALYN BAR</h3><p>📍 General Villamil Playas</p><p>🍦 ¡Te esperamos!</p></footer><script>
+
+/* ========================= */
+/* PEDIDO */
+/* ========================= */
+
+let pedido = [];
+
+
+/* ========================= */
+/* AGREGAR PRODUCTO */
+/* ========================= */
+
+function agregar(nombre, precio, boton) {
+
+    let producto = pedido.find(item => item.nombre === nombre);
+
+    if (producto) {
+
+        producto.cantidad++;
+
+    } else {
+
+        pedido.push({
+            nombre: nombre,
+            precio: precio,
+            cantidad: 1
+        });
+
+    }
+
+    boton.innerText = "✓ Agregado";
+
+    boton.classList.add("added");
+
+    actualizarPedido();
+
+}
+
+
+/* ========================= */
+/* ACTUALIZAR PEDIDO */
+/* ========================= */
+
+function actualizarPedido() {
+
+    const lista = document.getElementById("listaPedido");
+
+    const totalElemento = document.getElementById("totalPedido");
+
+    lista.innerHTML = "";
+
+    if (pedido.length === 0) {
+
+        lista.innerHTML = `
+            <div class="cart-empty">
+                Tu pedido está vacío.
+            </div>
+        `;
+
+        totalElemento.innerText = "$0,00";
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+
+    pedido.forEach(function(item, index) {
+
+        let subtotal = item.precio * item.cantidad;
+
+        total += subtotal;
+
+
+        const div = document.createElement("div");
+
+        div.className = "cart-item";
+
+
+        div.innerHTML = `
+
+            <div class="cart-item-name">
+
+                ${item.nombre}
+
+                <div class="quantity-control">
+
+                    <button onclick="disminuir(${index})">
+                        −
+                    </button>
+
+                    <span>
+                        ${item.cantidad}
+                    </span>
+
+                    <button onclick="aumentar(${index})">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="cart-item-price">
+
+                $${subtotal.toFixed(2).replace(".", ",")}
+
+            </div>
+
+        `;
+
+
+        lista.appendChild(div);
+
+    });
+
+
+    totalElemento.innerText =
+        "$" + total.toFixed(2).replace(".", ",");
+
+}
+
+
+/* ========================= */
+/* AUMENTAR */
+/* ========================= */
+
+function aumentar(index) {
+
+    pedido[index].cantidad++;
+
+    actualizarPedido();
+
+}
+
+
+/* ========================= */
+/* DISMINUIR */
+/* ========================= */
+
+function disminuir(index) {
+
+    pedido[index].cantidad--;
+
+    if (pedido[index].cantidad <= 0) {
+
+        pedido.splice(index, 1);
+
+    }
+
+    actualizarPedido();
+
+}
+
+
+/* ========================= */
+/* VACIAR PEDIDO */
+/* ========================= */
+
+function vaciarPedido() {
+
+    pedido = [];
+
+    actualizarPedido();
+
+}
+
+
+/* ========================= */
+/* ENVIAR A WHATSAPP */
+/* ========================= */
+
+function enviarWhatsApp() {
+
+    if (pedido.length === 0) {
+
+        alert("Primero agrega productos a tu pedido.");
+
+        return;
+
+    }
+
+
+    let mensaje =
+        "Hola Stalyn Bar 👋%0A%0A" +
+        "Quiero realizar el siguiente pedido:%0A%0A";
+
+
+    let total = 0;
+
+
+    pedido.forEach(function(item) {
+
+        let subtotal =
+            item.precio * item.cantidad;
+
+        total += subtotal;
+
+
+        mensaje +=
+            "• " +
+            item.cantidad +
+            " x " +
+            item.nombre +
+            " — $" +
+            subtotal.toFixed(2) +
+            "%0A";
+
+    });
+
+
+    mensaje +=
+        "%0A💰 TOTAL: $" +
+        total.toFixed(2) +
+        "%0A%0A" +
+        "Gracias.";
+
+
+    const numero = "593997859558";
+
+
+    const url =
+        "https://wa.me/" +
+        numero +
+        "?text=" +
+        mensaje;
+
+
+    window.open(url, "_blank");
+
+}
+
+
+/* ========================= */
+/* MOSTRAR CATEGORÍA */
+/* ========================= */
 
 function mostrar(categoria) {
 
-    document.getElementById("categorias").style.display = "none";
+    document.getElementById("categorias")
+    .style.display = "none";
+
 
     document.querySelectorAll(".menu-section")
     .forEach(function(seccion) {
@@ -543,18 +1158,26 @@ function mostrar(categoria) {
 
     });
 
+
     document.getElementById(categoria)
     .classList.add("active");
 
+
     window.scrollTo(0,0);
+
 }
 
+
+/* ========================= */
+/* VOLVER */
+/* ========================= */
 
 function volver() {
 
     document.getElementById("categorias")
     .style.display = "block";
 
+
     document.querySelectorAll(".menu-section")
     .forEach(function(seccion) {
 
@@ -562,7 +1185,9 @@ function volver() {
 
     });
 
+
     window.scrollTo(0,0);
+
 }
 
 </script></body>
