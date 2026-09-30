@@ -155,29 +155,50 @@ h2 {
 
 
 /* ========================= */
-/* BOTÓN REGRESAR */
+/* BOTÓN VOLVER AL MENÚ */
 /* ========================= */
 
 .back {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 
     width: 100%;
 
     border: none;
 
-    background: #063b5c;
+    background: linear-gradient(135deg, #063b5c, #0796a0);
 
     color: white;
 
-    padding: 14px;
+    padding: 16px 20px;
 
-    border-radius: 14px;
+    border-radius: 18px;
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 
-    font-size: 16px;
+    font-size: 17px;
+
+    font-weight: bold;
 
     cursor: pointer;
+
+    box-shadow: 0 6px 15px rgba(6,59,92,.25);
+
+    transition: all .2s ease;
+}
+
+.back:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(6,59,92,.30);
+}
+
+.back:active {
+    transform: scale(.97);
+
+    box-shadow: 0 3px 8px rgba(6,59,92,.20);
 }
 
 
@@ -253,116 +274,180 @@ footer p {
     🍦 Helados · 🍹 Cócteles · 🍔 Comida · 🥩 Asados
 </p>
 
-</header><div class="container"><!-- ======================= --><!-- CATEGORÍAS --><!-- ======================= --><div id="categorias"><h2>🌴 Nuestro menú</h2><div class="categories"><!-- ASADOS --><div class="category" onclick="mostrar('asados')"><div class="emoji">🥩</div>
+</header><div class="container"><!-- ======================= --><!-- CATEGORÍAS --><!-- ======================= --><div id="categorias"><h2>🌴 Nuestro menú</h2><div class="categories"><div class="category" onclick="mostrar('asados')"><div class="emoji">🥩</div>
 
 <h3>Asados</h3>
 
-</div><!-- PIQUEOS --><div class="category" onclick="mostrar('piqueos')"><div class="emoji">🍤</div>
+</div><div class="category" onclick="mostrar('piqueos')"><div class="emoji">🍤</div>
 
 <h3>Piqueos</h3>
 
-</div><!-- COMIDA RÁPIDA --><div class="category" onclick="mostrar('comida')"><div class="emoji">🍔</div>
+</div><div class="category" onclick="mostrar('comida')"><div class="emoji">🍔</div>
 
 <h3>Comida rápida</h3>
 
-</div><!-- CÓCTELES --><div class="category" onclick="mostrar('cocteles')"><div class="emoji">🍹</div>
+</div><div class="category" onclick="mostrar('cocteles')"><div class="emoji">🍹</div>
 
 <h3>Cócteles</h3>
 
-</div><!-- HELADOS --><div class="category" onclick="mostrar('helados')"><div class="emoji">🍦</div>
+</div><div class="category" onclick="mostrar('helados')"><div class="emoji">🍦</div>
 
 <h3>Helados</h3>
 
-</div><!-- COPAS --><div class="category" onclick="mostrar('copas')"><div class="emoji">🍨</div>
+</div><div class="category" onclick="mostrar('copas')"><div class="emoji">🍨</div>
 
 <h3>Copas</h3>
 
-</div><!-- MILKSHAKES --><div class="category" onclick="mostrar('milkshakes')"><div class="emoji">🥤</div>
+</div><div class="category" onclick="mostrar('milkshakes')"><div class="emoji">🥤</div>
 
 <h3>Milkshakes</h3>
 
-</div><!-- BATIDOS --><div class="category" onclick="mostrar('batidos')"><div class="emoji">🥭</div>
+</div><div class="category" onclick="mostrar('batidos')"><div class="emoji">🥭</div>
 
 <h3>Batidos</h3>
 
 </div></div></div><!-- ======================= --><!-- ASADOS --><!-- ======================= --><div id="asados" class="menu-section"><button class="back" onclick="volver()">
-← Volver al menú
-</button><h2>🥩 Asados</h2><div class="product"><div>
+🏠 <span>Volver al menú</span>
+</button><h2>🥩 Asados</h2><div class="product">
+<div>
 <h3>Pollo asado</h3>
 <p>Acompañado</p>
-</div><div class="price">$3,50</div></div><div class="product"><div>
+</div>
+<div class="price">$3,50</div>
+</div><div class="product">
+<div>
 <h3>Carne asada</h3>
 <p>Acompañada</p>
-</div><div class="price">$4,00</div></div><div class="product"><div>
+</div>
+<div class="price">$4,00</div>
+</div><div class="product">
+<div>
 <h3>Chuleta asada</h3>
 <p>Acompañada</p>
-</div><div class="price">$4,00</div></div><div class="product"><div>
+</div>
+<div class="price">$4,00</div>
+</div><div class="product">
+<div>
 <h3>Costillas</h3>
 <p>Acompañadas</p>
-</div><div class="price">$7,00</div></div><div class="product"><div>
+</div>
+<div class="price">$7,00</div>
+</div><div class="product">
+<div>
 <h3>Mini parrillada</h3>
 <p>Parrillada individual</p>
-</div><div class="price">$8,00</div></div><div class="product"><div>
+</div>
+<div class="price">$8,00</div>
+</div><div class="product">
+<div>
 <h3>Parrillada completa</h3>
 <p>Parrillada para compartir</p>
-</div><div class="price">$15,00</div></div></div><!-- ======================= --><!-- PIQUEOS --><!-- ======================= --><div id="piqueos" class="menu-section"><button class="back" onclick="volver()">
-← Volver al menú
-</button><h2>🍤 Piqueos</h2><div class="product"><div>
+</div>
+<div class="price">$15,00</div>
+</div></div><!-- ======================= --><!-- PIQUEOS --><!-- ======================= --><div id="piqueos" class="menu-section"><button class="back" onclick="volver()">
+🏠 <span>Volver al menú</span>
+</button><h2>🍤 Piqueos</h2><div class="product">
+<div>
 <h3>Alitas a la BBQ</h3>
 <p>5 alitas</p>
-</div><div class="price">$5,00</div></div><div class="product"><div>
+</div>
+<div class="price">$5,00</div>
+</div><div class="product">
+<div>
 <h3>Alitas a la parmesano</h3>
 <p>5 alitas</p>
-</div><div class="price">$5,00</div></div><div class="product"><div>
+</div>
+<div class="price">$5,00</div>
+</div><div class="product">
+<div>
 <h3>Alitas a la maracuyá</h3>
 <p>5 alitas</p>
-</div><div class="price">$5,00</div></div><div class="product"><div>
+</div>
+<div class="price">$5,00</div>
+</div><div class="product">
+<div>
 <h3>Picadita mixta</h3>
 <p>Carne, pollo y chuleta</p>
-</div><div class="price">$10,00</div></div><div class="product"><div>
+</div>
+<div class="price">$10,00</div>
+</div><div class="product">
+<div>
 <h3>Picadita de marisco</h3>
 <p>Pescado, camarón y calamar</p>
-</div><div class="price">$10,00</div></div><div class="product"><div>
+</div>
+<div class="price">$10,00</div>
+</div><div class="product">
+<div>
 <h3>Picadita mar y tierra</h3>
 <p>Picadita mixta + picadita de marisco</p>
-</div><div class="price">$15,00</div></div><div class="product"><div>
+</div>
+<div class="price">$15,00</div>
+</div><div class="product">
+<div>
 <h3>Deditos de pescado</h3>
 <p>Piqueo de pescado</p>
-</div><div class="price">$8,00</div></div><div class="product"><div>
+</div>
+<div class="price">$8,00</div>
+</div><div class="product">
+<div>
 <h3>Chicharrón de pescado</h3>
 <p>Piqueo de pescado</p>
-</div><div class="price">$8,00</div></div><div class="product"><div>
+</div>
+<div class="price">$8,00</div>
+</div><div class="product">
+<div>
 <h3>Camarones apanados</h3>
 <p>Piqueo de camarón</p>
-</div><div class="price">$8,00</div></div></div><!-- ======================= --><!-- COMIDA RÁPIDA --><!-- ======================= --><div id="comida" class="menu-section"><button class="back" onclick="volver()">
-← Volver al menú
-</button><h2>🍔 Comida rápida</h2><div class="product"><div>
+</div>
+<div class="price">$8,00</div>
+</div></div><!-- ======================= --><!-- COMIDA RÁPIDA --><!-- ======================= --><div id="comida" class="menu-section"><button class="back" onclick="volver()">
+🏠 <span>Volver al menú</span>
+</button><h2>🍔 Comida rápida</h2><div class="product">
+<div>
 <h3>Salchipapa</h3>
 <p>Papas + salchicha</p>
-</div><div class="price">$1,25</div></div><div class="product"><div>
+</div>
+<div class="price">$1,25</div>
+</div><div class="product">
+<div>
 <h3>Papi pollo</h3>
 <p>Papas + pollo</p>
-</div><div class="price">$2,50</div></div><div class="product"><div>
+</div>
+<div class="price">$2,50</div>
+</div><div class="product">
+<div>
 <h3>Tostada</h3>
 <p>Tostada preparada</p>
-</div><div class="price">$1,25</div></div><h2>🍔 Hamburguesas</h2><div class="product"><div>
+</div>
+<div class="price">$1,25</div>
+</div><h2>🍔 Hamburguesas</h2><div class="product">
+<div>
 <h3>Hamburguesa sencilla</h3>
 <p>Hamburguesa sencilla</p>
-</div><div class="price">$1,50</div></div><div class="product"><div>
+</div>
+<div class="price">$1,50</div>
+</div><div class="product">
+<div>
 <h3>Hamburguesa completa</h3>
 <p>Hamburguesa completa</p>
-</div><div class="price">$2,50</div></div><div class="product"><div>
+</div>
+<div class="price">$2,50</div>
+</div><div class="product">
+<div>
 <h3>Hamburguesa suprema</h3>
 <p>Hamburguesa especial</p>
-</div><div class="price">$7,00</div></div></div><!-- ======================= --><!-- CÓCTELES --><!-- ======================= --><div id="cocteles" class="menu-section"><button class="back" onclick="volver()">
-← Volver al menú
-</button><h2>🍹 Cócteles</h2><div class="product"><div>
+</div>
+<div class="price">$7,00</div>
+</div></div><!-- ======================= --><!-- CÓCTELES --><!-- ======================= --><div id="cocteles" class="menu-section"><button class="back" onclick="volver()">
+🏠 <span>Volver al menú</span>
+</button><h2>🍹 Cócteles</h2><div class="product">
+<div>
 <h3>Próximamente</h3>
 <p>Estamos preparando nuestra selección de cócteles.</p>
 </div><div class="price">
 Próximamente
 </div></div></div><!-- ======================= --><!-- HELADOS --><!-- ======================= --><div id="helados" class="menu-section"><button class="back" onclick="volver()">
-← Volver al menú
+🏠 <span>Volver al menú</span>
 </button><h2>🍦 Helados</h2><div class="product"><div>
 <h3>Helados cremosos</h3><p>
 Chicle · Napolitano · Chocolate ·
@@ -377,40 +462,61 @@ Snickers · Chocolate gourmet
 </p></div><div class="price">
 $1,25
 </div></div></div><!-- ======================= --><!-- COPAS --><!-- ======================= --><div id="copas" class="menu-section"><button class="back" onclick="volver()">
-← Volver al menú
-</button><h2>🍨 Copas</h2><div class="product"><div>
+🏠 <span>Volver al menú</span>
+</button><h2>🍨 Copas</h2><div class="product">
+<div>
 <h3>Copa Oreo</h3>
 <p>Copa de helado</p>
-</div><div class="price">$2,75</div></div><div class="product"><div>
+</div>
+<div class="price">$2,75</div>
+</div><div class="product">
+<div>
 <h3>Copa de cereza</h3>
 <p>Copa de helado</p>
-</div><div class="price">$2,75</div></div><div class="product"><div>
+</div>
+<div class="price">$2,75</div>
+</div><div class="product">
+<div>
 <h3>Copa caramelo</h3>
 <p>Copa de helado</p>
-</div><div class="price">$2,75</div></div><div class="product"><div>
+</div>
+<div class="price">$2,75</div>
+</div><div class="product">
+<div>
 <h3>Copa chocolate</h3>
 <p>Copa de helado</p>
-</div><div class="price">$2,75</div></div><h2>🍨 Copas especiales</h2><div class="product"><div>
+</div>
+<div class="price">$2,75</div>
+</div><h2>🍨 Copas especiales</h2><div class="product">
+<div>
 <h3>Triple Boom</h3>
 <p>Copa especial</p>
-</div><div class="price">$3,50</div></div><div class="product"><div>
+</div>
+<div class="price">$3,50</div>
+</div><div class="product">
+<div>
 <h3>Dulce Tentación</h3>
 <p>Copa especial</p>
-</div><div class="price">$3,50</div></div><div class="product"><div>
+</div>
+<div class="price">$3,50</div>
+</div><div class="product">
+<div>
 <h3>Triple Crush</h3>
 <p>Copa especial</p>
-</div><div class="price">$3,50</div></div></div><!-- ======================= --><!-- MILKSHAKES --><!-- ======================= --><div id="milkshakes" class="menu-section"><button class="back" onclick="volver()">
-← Volver al menú
+</div>
+<div class="price">$3,50</div>
+</div></div><!-- ======================= --><!-- MILKSHAKES --><!-- ======================= --><div id="milkshakes" class="menu-section"><button class="back" onclick="volver()">
+🏠 <span>Volver al menú</span>
 </button><h2>🥤 Milkshakes</h2><div class="product"><div>
-<h3>Milkshake</h3><p>
+<h3>Milkshakes</h3><p>
 Chicle · Chocolate · Ron pasas ·
 Vainilla · Frutilla · Oreo · Mora ·
 Cereza · Manicho · Snickers
 </p></div><div class="price">
 $3,00
 </div></div></div><!-- ======================= --><!-- BATIDOS --><!-- ======================= --><div id="batidos" class="menu-section"><button class="back" onclick="volver()">
-← Volver al menú
-</button><h2>🥤 Batidos</h2><div class="product"><div>
+🏠 <span>Volver al menú</span>
+</button><h2>🥭 Batidos</h2><div class="product"><div>
 <h3>Batidos</h3><p>
 Mora · Frutilla · Melón · Papaya
 </p></div><div class="price">
