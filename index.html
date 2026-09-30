@@ -7,6 +7,7 @@
 <title>Stalyn Bar | Menú</title>
 
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -30,16 +31,18 @@ header {
 .logo {
     width: 105px;
     height: 105px;
-    margin: 0 auto 15px;
+    margin: auto;
+    margin-bottom: 15px;
     border-radius: 50%;
     background: white;
     color: #063b5c;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-weight: bold;
     font-size: 18px;
-    line-height: 1.1;
 }
 
 header h1 {
@@ -63,6 +66,9 @@ h2 {
     margin: 30px 0 18px;
 }
 
+
+/* CATEGORÍAS */
+
 .categories {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -72,13 +78,24 @@ h2 {
 .category {
     background: white;
     padding: 22px 10px;
+
     border-radius: 18px;
+
     text-align: center;
+
     box-shadow: 0 4px 12px rgba(0,0,0,.10);
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.category:active {
+    transform: scale(.96);
 }
 
 .category .emoji {
-    font-size: 40px;
+    font-size: 42px;
     margin-bottom: 8px;
 }
 
@@ -87,14 +104,32 @@ h2 {
     font-size: 17px;
 }
 
+
+/* PRODUCTOS */
+
+.menu-section {
+    display: none;
+}
+
+.menu-section.active {
+    display: block;
+}
+
 .product {
     background: white;
+
     border-radius: 18px;
+
     padding: 18px;
+
     margin-bottom: 14px;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     box-shadow: 0 4px 12px rgba(0,0,0,.08);
 }
 
@@ -110,38 +145,88 @@ h2 {
 
 .price {
     color: #0796a0;
+
     font-size: 21px;
+
     font-weight: bold;
+
     white-space: nowrap;
 }
 
+
+/* BOTÓN REGRESAR */
+
+.back {
+    display: block;
+
+    width: 100%;
+
+    border: none;
+
+    background: #063b5c;
+
+    color: white;
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    margin-bottom: 20px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+/* WHATSAPP */
+
 .whatsapp {
     display: block;
+
     background: #25D366;
+
     color: white;
+
     text-decoration: none;
+
     text-align: center;
+
     padding: 17px;
+
     border-radius: 16px;
+
     margin: 28px 0;
+
     font-size: 18px;
+
     font-weight: bold;
 }
 
+
+/* FOOTER */
+
 footer {
     background: #063b5c;
+
     color: white;
+
     text-align: center;
+
     padding: 28px 15px;
+
     margin-top: 35px;
 }
 
 footer p {
     margin-top: 7px;
+
     font-size: 14px;
 }
 
+
 @media (max-width: 420px) {
+
     header h1 {
         font-size: 28px;
     }
@@ -149,11 +234,16 @@ footer p {
     .category .emoji {
         font-size: 34px;
     }
+
 }
+
 </style>
+
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -163,111 +253,530 @@ footer p {
 
     <h1>STALYN BAR</h1>
 
-    <p>🍦 Helados · 🍹 Cócteles · 🍔 Comida · 🥩 Asados</p>
+    <p>
+        🍦 Helados · 🍹 Cócteles · 🍔 Comida · 🥩 Asados
+    </p>
 
 </header>
 
+
 <div class="container">
 
-    <h2>🌴 Nuestro menú</h2>
 
-    <div class="categories">
+<!-- ======================= -->
+<!-- CATEGORÍAS -->
+<!-- ======================= -->
 
-        <div class="category">
-            <div class="emoji">🍦</div>
-            <h3>Helados</h3>
-        </div>
+<div id="categorias">
 
-        <div class="category">
-            <div class="emoji">🥤</div>
-            <h3>Batidos</h3>
-        </div>
-
-        <div class="category">
-            <div class="emoji">🍨</div>
-            <h3>Copas</h3>
-        </div>
-
-        <div class="category">
-            <div class="emoji">🍹</div>
-            <h3>Cócteles</h3>
-        </div>
-
-        <div class="category">
-            <div class="emoji">🍔</div>
-            <h3>Comida rápida</h3>
-        </div>
-
-        <div class="category">
-            <div class="emoji">🥩</div>
-            <h3>Asados</h3>
-        </div>
-
-    </div>
+<h2>🌴 Nuestro menú</h2>
 
 
-    <h2>⭐ Destacados</h2>
+<div class="categories">
 
 
-    <div class="product">
+<div class="category" onclick="mostrar('helados')">
 
-        <div>
-            <h3>🥤 Batidos</h3>
-            <p>Variedad de sabores</p>
-        </div>
+    <div class="emoji">🍦</div>
 
-        <div class="price">$2,50</div>
+    <h3>Helados</h3>
 
-    </div>
+</div>
 
 
-    <div class="product">
+<div class="category" onclick="mostrar('batidos')">
 
-        <div>
-            <h3>🍨 Copas</h3>
-            <p>2 bolas de helado</p>
-        </div>
+    <div class="emoji">🥤</div>
 
-        <div class="price">$2,75</div>
+    <h3>Batidos</h3>
 
-    </div>
+</div>
 
 
-    <div class="product">
+<div class="category" onclick="mostrar('copas')">
 
-        <div>
-            <h3>🍦 Copas especiales</h3>
-            <p>Una experiencia más completa</p>
-        </div>
+    <div class="emoji">🍨</div>
 
-        <div class="price">$3,50</div>
+    <h3>Copas</h3>
 
-    </div>
+</div>
 
 
-    <!-- CAMBIAREMOS ESTE NÚMERO POR TU WHATSAPP -->
+<div class="category" onclick="mostrar('cocteles')">
 
-    <a
-        class="whatsapp"
-        href="https://wa.me/593XXXXXXXXX?text=Hola%20Stalyn%20Bar,%20quiero%20hacer%20un%20pedido"
-        target="_blank">
+    <div class="emoji">🍹</div>
 
-        📲 PEDIR POR WHATSAPP
+    <h3>Cócteles</h3>
 
-    </a>
+</div>
+
+
+<div class="category" onclick="mostrar('comida')">
+
+    <div class="emoji">🍔</div>
+
+    <h3>Comida rápida</h3>
+
+</div>
+
+
+<div class="category" onclick="mostrar('asados')">
+
+    <div class="emoji">🥩</div>
+
+    <h3>Asados</h3>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ======================= -->
+<!-- HELADOS -->
+<!-- ======================= -->
+
+<div id="helados" class="menu-section">
+
+<button class="back" onclick="volver()">
+← Volver al menú
+</button>
+
+<h2>🍦 Helados</h2>
+
+
+<div class="product">
+
+<div>
+<h3>Cremosos</h3>
+
+<p>
+Napolitano · Ron pasas · Chocolate ·
+Vainilla · Chicle · Frutilla
+</p>
+
+</div>
+
+<div class="price">
+$1,00
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div>
+<h3>Especiales</h3>
+
+<p>
+Oreo · Manícho · Snickers ·
+Cereza Gourmet · Marmoleado Mora ·
+Chocolate Gourmet
+</p>
+
+</div>
+
+<div class="price">
+$1,25
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- ======================= -->
+<!-- BATIDOS -->
+<!-- ======================= -->
+
+<div id="batidos" class="menu-section">
+
+<button class="back" onclick="volver()">
+← Volver al menú
+</button>
+
+<h2>🥤 Batidos</h2>
+
+
+<div class="product">
+
+<div>
+
+<h3>Batidos</h3>
+
+<p>
+Variedad de sabores
+</p>
+
+</div>
+
+<div class="price">
+$2,50
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- ======================= -->
+<!-- COPAS -->
+<!-- ======================= -->
+
+<div id="copas" class="menu-section">
+
+<button class="back" onclick="volver()">
+← Volver al menú
+</button>
+
+<h2>🍨 Copas</h2>
+
+
+<div class="product">
+
+<div>
+
+<h3>Copas</h3>
+
+<p>
+2 bolas de helado
+</p>
+
+</div>
+
+<div class="price">
+$2,75
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div>
+
+<h3>Triple Boom</h3>
+
+<p>
+3 bolas de helado
+</p>
+
+</div>
+
+<div class="price">
+$3,50
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div>
+
+<h3>Dulce Tentación</h3>
+
+<p>
+Copa especial
+</p>
+
+</div>
+
+<div class="price">
+$3,50
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div>
+
+<h3>Triple Crush</h3>
+
+<p>
+Copa especial
+</p>
+
+</div>
+
+<div class="price">
+$3,50
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- ======================= -->
+<!-- CÓCTELES -->
+<!-- ======================= -->
+
+<div id="cocteles" class="menu-section">
+
+<button class="back" onclick="volver()">
+← Volver al menú
+</button>
+
+<h2>🍹 Cócteles</h2>
+
+
+<div class="product">
+
+<div>
+
+<h3>Cócteles</h3>
+
+<p>
+Próximamente
+</p>
+
+</div>
+
+<div class="price">
+Consultar
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- ======================= -->
+<!-- COMIDA -->
+<!-- ======================= -->
+
+<div id="comida" class="menu-section">
+
+<button class="back" onclick="volver()">
+← Volver al menú
+</button>
+
+<h2>🍔 Comida rápida</h2>
+
+
+<div class="product">
+
+<div>
+
+<h3>Salchipapa</h3>
+
+<p>
+Papas + salchicha
+</p>
+
+</div>
+
+<div class="price">
+$1,25
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div>
+
+<h3>Papi pollo</h3>
+
+<p>
+Papas + pollo
+</p>
+
+</div>
+
+<div class="price">
+$2,50
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div>
+
+<h3>Hamburguesas</h3>
+
+<p>
+Variedad de hamburguesas
+</p>
+
+</div>
+
+<div class="price">
+$1,50
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div>
+
+<h3>Hot Dog</h3>
+
+<p>
+Hot dog preparado
+</p>
+
+</div>
+
+<div class="price">
+$1,50
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- ======================= -->
+<!-- ASADOS -->
+<!-- ======================= -->
+
+<div id="asados" class="menu-section">
+
+<button class="back" onclick="volver()">
+← Volver al menú
+</button>
+
+<h2>🥩 Asados</h2>
+
+
+<div class="product">
+
+<div>
+
+<h3>Pollo asado</h3>
+
+<p>
+Acompañado
+</p>
+
+</div>
+
+<div class="price">
+$3,50
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div>
+
+<h3>Carne asada</h3>
+
+<p>
+Acompañada
+</p>
+
+</div>
+
+<div class="price">
+$4,00
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div>
+
+<h3>Chuleta</h3>
+
+<p>
+Acompañada
+</p>
+
+</div>
+
+<div class="price">
+$4,00
+</div>
+
+</div>
+
+
+</div>
+
+
+<a
+class="whatsapp"
+href="https://wa.me/593XXXXXXXXX?text=Hola%20Stalyn%20Bar,%20quiero%20hacer%20un%20pedido"
+target="_blank">
+
+📲 PEDIR POR WHATSAPP
+
+</a>
+
 
 </div>
 
 
 <footer>
 
-    <h3>STALYN BAR</h3>
+<h3>STALYN BAR</h3>
 
-    <p>📍 General Villamil Playas</p>
+<p>📍 General Villamil Playas</p>
 
-    <p>🍦 ¡Te esperamos!</p>
+<p>🍦 ¡Te esperamos!</p>
 
 </footer>
+
+
+<script>
+
+function mostrar(categoria) {
+
+    document.getElementById("categorias").style.display = "none";
+
+    document.querySelectorAll(".menu-section")
+    .forEach(function(seccion) {
+
+        seccion.classList.remove("active");
+
+    });
+
+    document.getElementById(categoria)
+    .classList.add("active");
+
+    window.scrollTo(0,0);
+}
+
+
+function volver() {
+
+    document.getElementById("categorias")
+    .style.display = "block";
+
+    document.querySelectorAll(".menu-section")
+    .forEach(function(seccion) {
+
+        seccion.classList.remove("active");
+
+    });
+
+    window.scrollTo(0,0);
+}
+
+</script>
+
 
 </body>
 </html>
