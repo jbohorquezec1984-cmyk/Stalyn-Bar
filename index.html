@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stalyn Bar | Menú</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f3ea;
+    color: #222;
+}
+
+header {
+    background: linear-gradient(135deg, #063b5c, #0796a0);
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+    border-radius: 0 0 30px 30px;
+}
+
+.logo {
+    width: 105px;
+    height: 105px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: white;
+    color: #063b5c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.1;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 15px;
+}
+
+.container {
+    width: 92%;
+    max-width: 700px;
+    margin: 25px auto;
+}
+
+h2 {
+    color: #063b5c;
+    text-align: center;
+    margin: 30px 0 18px;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.category {
+    background: white;
+    padding: 22px 10px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,.10);
+}
+
+.category .emoji {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.category h3 {
+    color: #063b5c;
+    font-size: 17px;
+}
+
+.product {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+.product h3 {
+    color: #063b5c;
+    margin-bottom: 5px;
+}
+
+.product p {
+    color: #666;
+    font-size: 14px;
+}
+
+.price {
+    color: #0796a0;
+    font-size: 21px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.whatsapp {
+    display: block;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 17px;
+    border-radius: 16px;
+    margin: 28px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+footer {
+    background: #063b5c;
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+    margin-top: 35px;
+}
+
+footer p {
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+@media (max-width: 420px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    .category .emoji {
+        font-size: 34px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        STALYN<br>BAR
+    </div>
+
+    <h1>STALYN BAR</h1>
+
+    <p>🍦 Helados · 🍹 Cócteles · 🍔 Comida · 🥩 Asados</p>
+
+</header>
+
+<div class="container">
+
+    <h2>🌴 Nuestro menú</h2>
+
+    <div class="categories">
+
+        <div class="category">
+            <div class="emoji">🍦</div>
+            <h3>Helados</h3>
+        </div>
+
+        <div class="category">
+            <div class="emoji">🥤</div>
+            <h3>Batidos</h3>
+        </div>
+
+        <div class="category">
+            <div class="emoji">🍨</div>
+            <h3>Copas</h3>
+        </div>
+
+        <div class="category">
+            <div class="emoji">🍹</div>
+            <h3>Cócteles</h3>
+        </div>
+
+        <div class="category">
+            <div class="emoji">🍔</div>
+            <h3>Comida rápida</h3>
+        </div>
+
+        <div class="category">
+            <div class="emoji">🥩</div>
+            <h3>Asados</h3>
+        </div>
+
+    </div>
+
+
+    <h2>⭐ Destacados</h2>
+
+
+    <div class="product">
+
+        <div>
+            <h3>🥤 Batidos</h3>
+            <p>Variedad de sabores</p>
+        </div>
+
+        <div class="price">$2,50</div>
+
+    </div>
+
+
+    <div class="product">
+
+        <div>
+            <h3>🍨 Copas</h3>
+            <p>2 bolas de helado</p>
+        </div>
+
+        <div class="price">$2,75</div>
+
+    </div>
+
+
+    <div class="product">
+
+        <div>
+            <h3>🍦 Copas especiales</h3>
+            <p>Una experiencia más completa</p>
+        </div>
+
+        <div class="price">$3,50</div>
+
+    </div>
+
+
+    <!-- CAMBIAREMOS ESTE NÚMERO POR TU WHATSAPP -->
+
+    <a
+        class="whatsapp"
+        href="https://wa.me/593XXXXXXXXX?text=Hola%20Stalyn%20Bar,%20quiero%20hacer%20un%20pedido"
+        target="_blank">
+
+        📲 PEDIR POR WHATSAPP
+
+    </a>
+
+</div>
+
+
+<footer>
+
+    <h3>STALYN BAR</h3>
+
+    <p>📍 General Villamil Playas</p>
+
+    <p>🍦 ¡Te esperamos!</p>
+
+</footer>
+
+</body>
+</html>
